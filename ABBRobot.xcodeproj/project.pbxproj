@@ -16,6 +16,8 @@
 		DD5BF49513D59FB800D943C4 /* RobotController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5BF49413D59FB800D943C4 /* RobotController.xib */; };
 		DD5BF58313D5A02B00D943C4 /* adlpCom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD5BF52B13D5A02B00D943C4 /* adlpCom.cpp */; };
 		DD5BF58413D5A02B00D943C4 /* ofSerialEven.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD5BF52D13D5A02B00D943C4 /* ofSerialEven.cpp */; };
+		DD5BF59313D5A36200D943C4 /* arapParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD5BF59213D5A36200D943C4 /* arapParser.cpp */; };
+		DD5BF59613D5AA7100D943C4 /* ofxABBRobot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD5BF59513D5AA7000D943C4 /* ofxABBRobot.cpp */; };
 		DD62F864135F40A500465B2E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD62F863135F40A500465B2E /* MainMenu.xib */; };
 		DD7B14AE11A3CF38000D9775 /* osc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD7B146211A3CF38000D9775 /* osc.a */; };
 		DD7B14AF11A3CF38000D9775 /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD7B146611A3CF38000D9775 /* ofxOscBundle.cpp */; };
@@ -169,6 +171,11 @@
 		DD5BF52C13D5A02B00D943C4 /* adlpCom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adlpCom.h; sourceTree = "<group>"; };
 		DD5BF52D13D5A02B00D943C4 /* ofSerialEven.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofSerialEven.cpp; sourceTree = "<group>"; };
 		DD5BF52E13D5A02B00D943C4 /* ofSerialEven.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofSerialEven.h; sourceTree = "<group>"; };
+		DD5BF59213D5A36200D943C4 /* arapParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = arapParser.cpp; sourceTree = "<group>"; };
+		DD5BF59413D5A36C00D943C4 /* arapParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arapParser.h; sourceTree = "<group>"; };
+		DD5BF59513D5AA7000D943C4 /* ofxABBRobot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxABBRobot.cpp; sourceTree = "<group>"; };
+		DD5BF59713D5AA7B00D943C4 /* ofxABBRobot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxABBRobot.h; sourceTree = "<group>"; };
+		DD5BF59813D5ADB300D943C4 /* arapInstructions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arapInstructions.h; sourceTree = "<group>"; };
 		DD62F863135F40A500465B2E /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		DD7B145211A3CF38000D9775 /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
 		DD7B145311A3CF38000D9775 /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
@@ -489,10 +496,15 @@
 		DD5BF52A13D5A02B00D943C4 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				DD5BF59513D5AA7000D943C4 /* ofxABBRobot.cpp */,
+				DD5BF59713D5AA7B00D943C4 /* ofxABBRobot.h */,
 				DD5BF52B13D5A02B00D943C4 /* adlpCom.cpp */,
 				DD5BF52C13D5A02B00D943C4 /* adlpCom.h */,
+				DD5BF59213D5A36200D943C4 /* arapParser.cpp */,
+				DD5BF59413D5A36C00D943C4 /* arapParser.h */,
 				DD5BF52D13D5A02B00D943C4 /* ofSerialEven.cpp */,
 				DD5BF52E13D5A02B00D943C4 /* ofSerialEven.h */,
+				DD5BF59813D5ADB300D943C4 /* arapInstructions.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1594,6 +1606,8 @@
 				DD5BF49313D59F4500D943C4 /* RobotController.mm in Sources */,
 				DD5BF58313D5A02B00D943C4 /* adlpCom.cpp in Sources */,
 				DD5BF58413D5A02B00D943C4 /* ofSerialEven.cpp in Sources */,
+				DD5BF59313D5A36200D943C4 /* arapParser.cpp in Sources */,
+				DD5BF59613D5AA7100D943C4 /* ofxABBRobot.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
