@@ -63,7 +63,6 @@
 }
 
 - (void)tick:(NSTimer *)theTimer{
-    robot->update();  
     vector<ARAPMessage> messages = robot->com->readMessagesAfterCount(errorCheckCount);
     if(messages.size() > 0){
         errorCheckCount = robot->com->readMessageCounter;
