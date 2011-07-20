@@ -498,8 +498,8 @@
 			children = (
 				DD5BF59513D5AA7000D943C4 /* ofxABBRobot.cpp */,
 				DD5BF59713D5AA7B00D943C4 /* ofxABBRobot.h */,
-				DD5BF52B13D5A02B00D943C4 /* adlpCom.cpp */,
 				DD5BF52C13D5A02B00D943C4 /* adlpCom.h */,
+				DD5BF52B13D5A02B00D943C4 /* adlpCom.cpp */,
 				DD5BF59213D5A36200D943C4 /* arapParser.cpp */,
 				DD5BF59413D5A36C00D943C4 /* arapParser.h */,
 				DD5BF52D13D5A02B00D943C4 /* ofSerialEven.cpp */,
