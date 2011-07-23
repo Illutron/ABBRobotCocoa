@@ -1,5 +1,5 @@
 #import "RobotController.h"
-
+#include "ofxVectorMath.h"
 
 @implementation RobotController
 @synthesize speedmm;
@@ -37,7 +37,6 @@
 -(void)awakeFromNib{
     [super awakeFromNib];
     logArray = [NSMutableArray  array];
-    [logArrayController addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSDate date],@"date",@"Blablabla",@"message", nil]];
     
 }
 - (void)dealloc
@@ -51,15 +50,69 @@
 
 - (IBAction)move:(id)sender {
     ARAP_COORDINATE coord;
-    coord.x = [locationX intValue];
-    coord.y = [locationY intValue];
-    coord.z = [locationZ intValue];
-    coord.q1 = [locationQ1 intValue];
-    coord.q2 = [locationQ2 intValue];
-    coord.q3 = [locationQ3 intValue];
-    coord.q4 = [locationQ4 intValue];
-    robot->move(coord, [speedmm intValue], [speedprc intValue], true, [coordinateMode selectedRow]);
+    coord.x = [locationX floatValue];
+    coord.y = [locationY floatValue];
+    coord.z = [locationZ floatValue];
+    coord.q1 = [locationQ1 floatValue];
+    coord.q2 = [locationQ2 floatValue];
+    coord.q3 = [locationQ3 floatValue];
+    coord.q4 = [locationQ4 floatValue];
+    robot->move(coord, [speedmm floatValue], [speedprc floatValue], true, [coordinateMode selectedRow]);
     
+}
+
+- (IBAction)store1:(id)sender {
+    robot->storeCalibrationCorner(0);
+}
+
+- (IBAction)store2:(id)sender {
+    robot->storeCalibrationCorner(1);
+}
+
+- (IBAction)store3:(id)sender {
+    robot->storeCalibrationCorner(2);
+}
+
+- (IBAction)testPattern:(id)sender {
+    vector<ofxVec3f> coords;
+      coords.push_back(ofxVec3f(0,0,0));    
+     coords.push_back(ofxVec3f(0,100,0));
+     coords.push_back(ofxVec3f(0,100,100));
+     coords.push_back(ofxVec3f(0,0,100));
+     coords.push_back(ofxVec3f(0,0,0));    
+     
+
+    
+    
+    //coords.push_back(ofxVec3f(0,100,0));
+    
+/*    int res = 114;
+    coords.push_back(ofxVec3f(100,100,0) + ofxVec3f(100*sin(0), 100*cos(0), 10));
+    for(int i=0;i<res;i++){
+        
+        coords.push_back(ofxVec3f(100,200,0) + ofxVec3f(100*sin(TWO_PI * i/res), 100*cos(TWO_PI * i/res), 0));
+    }
+    coords.push_back(ofxVec3f(100,200,0) + ofxVec3f(100*sin(0), 100*cos(0), 0));
+    
+    /*   coords.push_back(ofxVec3f(0,0,0));    
+     coords.push_back(ofxVec3f(200,0,0));
+     coords.push_back(ofxVec3f(200,200,0));
+     coords.push_back(ofxVec3f(0,200,0));
+     coords.push_back(ofxVec3f(200,0,0));
+     coords.push_back(ofxVec3f(00,0,0));*/
+    
+    robot->movePlane(coords, [speedmm floatValue]);
+}
+
+- (IBAction)home:(id)sender {
+    vector<ofxVec3f> coords;
+    coords.push_back(ofxVec3f(0,0,200));
+
+    robot->movePlane(coords, [speedmm floatValue], true);
+}
+
+- (IBAction)runDrawing:(id)sender {
+    robot->runDrawing([speedmm floatValue]);
 }
 
 - (void)tick:(NSTimer *)theTimer{
@@ -102,16 +155,16 @@
         default:
             break;
     }
-    [locationX setIntValue:status.location.x];
-    [locationY setIntValue:status.location.y];
-    [locationZ setIntValue:status.location.z];
-    [locationQ1 setIntValue:status.location.q1];
-    [locationQ2 setIntValue:status.location.q2];
-    [locationQ3 setIntValue:status.location.q3];
-    [locationQ4 setIntValue:status.location.q4];
-
-//    [self performSelector:@selector(updateStatus:) withObject:self afterDelay:2.0];
-
+    [locationX setFloatValue:status.location.x];
+    [locationY setFloatValue:status.location.y];
+    [locationZ setFloatValue:status.location.z];
+    [locationQ1 setFloatValue:status.location.q1];
+    [locationQ2 setFloatValue:status.location.q2];
+    [locationQ3 setFloatValue:status.location.q3];
+    [locationQ4 setFloatValue:status.location.q4];
+    
+    //    [self performSelector:@selector(updateStatus:) withObject:self afterDelay:2.0];
+    
 }
 
 - (IBAction)toggleMode:(id)sender {
@@ -124,7 +177,7 @@
     } else if(currentMode == EXECUTION){
         robot->writeMode(OPERATION);
     }
-//    [self performSelector:@selector(updateStatus:) withObject:self afterDelay:1.0];
+    //    [self performSelector:@selector(updateStatus:) withObject:self afterDelay:1.0];
 }
 
 - (IBAction)sync:(id)sender {

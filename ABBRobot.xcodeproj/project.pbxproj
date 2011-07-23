@@ -12,6 +12,11 @@
 		5831E81313840BBE00156214 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5831E81213840BBE00156214 /* AppKit.framework */; };
 		5831E81513840BC300156214 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5831E81413840BC300156214 /* Foundation.framework */; };
 		5831E81B13840FA300156214 /* BeamSync.m in Sources */ = {isa = PBXBuildFile; fileRef = 5831E81A13840FA300156214 /* BeamSync.m */; };
+		DD05701F13D9EF8F007B0C1B /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD05701713D9EF8F007B0C1B /* tinyxml.cpp */; };
+		DD05702013D9EF8F007B0C1B /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD05701913D9EF8F007B0C1B /* tinyxmlerror.cpp */; };
+		DD05702113D9EF8F007B0C1B /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD05701A13D9EF8F007B0C1B /* tinyxmlparser.cpp */; };
+		DD05702213D9EF8F007B0C1B /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD05701C13D9EF8F007B0C1B /* ofxXmlSettings.cpp */; };
+		DD05702413D9FB3F007B0C1B /* coordinateHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD05702313D9FB3F007B0C1B /* coordinateHandler.cpp */; };
 		DD5BF49313D59F4500D943C4 /* RobotController.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD5BF49213D59F4500D943C4 /* RobotController.mm */; };
 		DD5BF49513D59FB800D943C4 /* RobotController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD5BF49413D59FB800D943C4 /* RobotController.xib */; };
 		DD5BF58313D5A02B00D943C4 /* adlpCom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD5BF52B13D5A02B00D943C4 /* adlpCom.cpp */; };
@@ -164,6 +169,14 @@
 		5831E81413840BC300156214 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = ../../../../../System/Library/Frameworks/Foundation.framework; sourceTree = "<group>"; };
 		5831E81913840FA200156214 /* BeamSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeamSync.h; sourceTree = "<group>"; };
 		5831E81A13840FA300156214 /* BeamSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeamSync.m; sourceTree = "<group>"; };
+		DD05701713D9EF8F007B0C1B /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		DD05701813D9EF8F007B0C1B /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		DD05701913D9EF8F007B0C1B /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		DD05701A13D9EF8F007B0C1B /* tinyxmlparser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
+		DD05701C13D9EF8F007B0C1B /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
+		DD05701D13D9EF8F007B0C1B /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		DD05702313D9FB3F007B0C1B /* coordinateHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = coordinateHandler.cpp; sourceTree = "<group>"; };
+		DD05702513D9FB4C007B0C1B /* coordinateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coordinateHandler.h; sourceTree = "<group>"; };
 		DD5BF49113D59F4500D943C4 /* RobotController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotController.h; sourceTree = "<group>"; };
 		DD5BF49213D59F4500D943C4 /* RobotController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RobotController.mm; sourceTree = "<group>"; };
 		DD5BF49413D59FB800D943C4 /* RobotController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RobotController.xib; sourceTree = "<group>"; };
@@ -475,6 +488,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD05701413D9EF8F007B0C1B /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				DD05701613D9EF8F007B0C1B /* libs */,
+				DD05701B13D9EF8F007B0C1B /* src */,
+			);
+			path = ofxXmlSettings;
+			sourceTree = "<group>";
+		};
+		DD05701613D9EF8F007B0C1B /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				DD05701713D9EF8F007B0C1B /* tinyxml.cpp */,
+				DD05701813D9EF8F007B0C1B /* tinyxml.h */,
+				DD05701913D9EF8F007B0C1B /* tinyxmlerror.cpp */,
+				DD05701A13D9EF8F007B0C1B /* tinyxmlparser.cpp */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		DD05701B13D9EF8F007B0C1B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DD05701C13D9EF8F007B0C1B /* ofxXmlSettings.cpp */,
+				DD05701D13D9EF8F007B0C1B /* ofxXmlSettings.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		DD5BF49013D59F4500D943C4 /* RobotController */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +547,8 @@
 				DD5BF52D13D5A02B00D943C4 /* ofSerialEven.cpp */,
 				DD5BF52E13D5A02B00D943C4 /* ofSerialEven.h */,
 				DD5BF59813D5ADB300D943C4 /* arapInstructions.h */,
+				DD05702313D9FB3F007B0C1B /* coordinateHandler.cpp */,
+				DD05702513D9FB4C007B0C1B /* coordinateHandler.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -512,6 +556,7 @@
 		DD7B144C11A3CF38000D9775 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				DD05701413D9EF8F007B0C1B /* ofxXmlSettings */,
 				DD5BF49613D5A02B00D943C4 /* ofxABBRobot */,
 				DDB3D098135EDF930097B98E /* ofxCocoaPlugins */,
 				DDB3CE46135DF08E0097B98E /* ofxThread */,
@@ -1608,6 +1653,11 @@
 				DD5BF58413D5A02B00D943C4 /* ofSerialEven.cpp in Sources */,
 				DD5BF59313D5A36200D943C4 /* arapParser.cpp in Sources */,
 				DD5BF59613D5AA7100D943C4 /* ofxABBRobot.cpp in Sources */,
+				DD05701F13D9EF8F007B0C1B /* tinyxml.cpp in Sources */,
+				DD05702013D9EF8F007B0C1B /* tinyxmlerror.cpp in Sources */,
+				DD05702113D9EF8F007B0C1B /* tinyxmlparser.cpp in Sources */,
+				DD05702213D9EF8F007B0C1B /* ofxXmlSettings.cpp in Sources */,
+				DD05702413D9FB3F007B0C1B /* coordinateHandler.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

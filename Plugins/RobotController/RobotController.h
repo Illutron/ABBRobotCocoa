@@ -38,6 +38,12 @@
 - (IBAction)uploadProgram:(id)sender;
 - (IBAction)downloadProgram:(id)sender;
 - (IBAction)move:(id)sender;
+- (IBAction)store1:(id)sender;
+- (IBAction)store2:(id)sender;
+- (IBAction)store3:(id)sender;
+- (IBAction)testPattern:(id)sender;
+- (IBAction)home:(id)sender;
+- (IBAction)runDrawing:(id)sender;
 
 @property (assign) IBOutlet NSTextField *speedmm;
 @property (assign) IBOutlet NSTextField *speedprc;
